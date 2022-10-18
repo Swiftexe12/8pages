@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>javascript class</title>
+ </head>
+ <body style="background-color:aqua; text-align:center;">
+   <div  id="a1">
+      <h2>ALLOWANCE CALCULATOR</h2>
+      <input type="text" id="input1" placeholder="input date of birth"> &nbsp;
+      <button type="button" onclick="sac()">SALARY</button>
+      <span>=</span>&nbsp;&nbsp;<span id="yam"></span>
+  </div>
+ <script>
+
+    function sac() {
+          age = Number(document.getElementById("input1").value);
+          let age1= 2022-age;
+          document.getElementById("yam").innerHTML = age1*1000;
+    }1
+</script>
+ </body>
+</html>
