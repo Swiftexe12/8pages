@@ -1,0 +1,93 @@
+@media screen and (max-width:768px) {
+    .all{
+        overflow-x: hidden;
+    }
+    .task {      
+      width: 20%;
+    }
+
+    #input2{
+       margin-top: 5%;
+       margin-right: 20%
+    }
+
+    .simple2{
+        height: 550px;
+    }
+   .simple{
+    height: 30%;
+   }
+    .simple1{
+        height: 170%;      
+    }
+
+    #input3{
+        width: 50%;
+    }
+
+    .mynumber{
+        margin-left: 13%;
+    }
+    .check{
+        margin-left: 14%;
+    }
+    .again{
+        margin-left: 14%;
+    }
+    .number{
+        margin-left: 2%;
+        font-size: 30px;
+        margin-top: 5%;
+    }
+    .highestscore{
+        margin-left:28%
+    }
+    .background1{
+        height: 490px;
+    }
+    .task1 {      
+        width: 20%;
+        margin-top: 12%;
+      }
+      .ad{
+        margin-right: 17%;
+      }
+      .mi{
+        margin-left: -18%;
+      }
+      .mu{
+        margin-left: -3%;
+      }
+      .di{
+        margin-left: -3%;
+      }
+  }
+
+
+
+  @media screen and (min-width:768px) {
+    .task {      
+    width: 10%;
+    }
+    .task1 {      
+        width: 10%;
+      }
+    .mynumber{
+    margin-left: 39%;
+    }
+    .check{
+        margin-left: 39%;
+    }
+    .again{
+        margin-left: 39%;
+    }
+    
+    .highestscore{
+        margin-left: 42%;
+        
+    }
+    
+    
+  }
+
+ 

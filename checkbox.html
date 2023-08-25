@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Validation</title>
+</head>
+
+<body>
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <label for="vehicle1"> I have a bike</label><br>
+    <!-- <h1>Checkbox Validation Example</h1>
+        <label>
+            <input type="checkbox" id="myCheckbox"> I agree to the terms and conditions
+        </label>
+        <p id="error" style="color: red; display: none;">You must agree to the terms and conditions.</p>
+        <button onclick="validateCheckbox()">Submit</button> -->
+    <script>
+        // function validateCheckbox() {
+        //     var checkbox = document.getElementById("myCheckbox");
+        //     var errorMessage = document.getElementById("error");
+
+        //     if (checkbox.checked) {
+        //         errorMessage.style.display = "none";
+        //     } else {
+        //         errorMessage.style.display = "block";
+        //     }
+        // }
+        // Get the checkbox
+        let checkBox = document.getElementById("vehicle1");
+        // Add an event listener to the checkbox
+        checkBox.addEventListener('click', function () {
+            // Check if the checkbox is checked
+            if (checkBox.checked) {
+                // The checkbox is checked
+                alert("The checkbox is checked!");
+            } else {
+                // The checkbox is not checked
+                alert("The checkbox is not checked!");
+            }
+        });
+    </script>
+</body>
+
+</html>

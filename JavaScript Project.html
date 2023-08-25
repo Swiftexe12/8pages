@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+    <style>
+        #subject {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #tim {
+            font-family: 'Courier New', Courier, monospace;
+            border-left: 2pc dotted gray;
+            border-right: 2pc dotted gray;
+            margin: 1pc;
+        }
+
+        h5,
+        h3 {
+            font-family: Algerian;
+        }
+
+        #day,
+        #days {
+            font-size: x-large;
+        }
+
+        button {
+            border-radius: 1pc;
+            padding: 5px;
+            background: gray;
+            color: white;
+        }
+
+        .bash {
+            color: #198754;
+            text-transform: capitalize;
+            font-family: monospace;
+            font-size: 24px;
+        }
+
+        .bast {
+            color: #b81919;
+            text-transform: capitalize;
+            font-family: monospace;
+            font-size: 24px;
+        }
+
+
+        .messy {
+            color: #198754;
+            text-transform: capitalize;
+            font-family: monospace;
+            font-size: 24px;
+        }
+
+        #edcfr {
+            text-shadow: 1px 1px blue;
+            text-decoration: overline;
+
+        }
+    </style>
+</head>
+
+<body class="text-center" style="color: grey; overflow-x: hidden; font-family: monospace;">
+    <h1 class="fs-1 font-monospace figure-caption" id="edcfr">JAVASCRIPT PROJECT</h1>
+    <h2 id="tim" class="text-center fw-bold pt-2 fs-1"></h2>
+    <br>
+    <div class=" border m-3" style="background: rgba(128, 128, 128, 0.233);">
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg py-5">
+                    <div class="form-control-sm p-2 float-lg-start">
+                        <h5 class="fw-semibold">SIMPLE CALCULATOR</h5><br />
+                        <input class="form-control-sm" type="text" id="1"><br>
+                        <span id="ase">&nbsp;</span><br>
+                        <input class="form-control-sm" type="text" id="2"><br>
+                        <span id="ans">&nbsp;</span><br>
+                        <input type="button" onclick="jay()" value="+"></input>&nbsp;
+                        <input type="button" onclick="jos()" value="-"></input>&nbsp;
+                        <input type="button" onclick="jah()" value="*"></input>&nbsp;
+                        <input type="button" onclick="jog()" value="/"></input>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-lg py-3">
+                    <div class="form-control-sm p-2 float-lg-start">
+                        <h5 id="ponit" class="fw-semibold">INVESTMENT CALCULATOR</h5>
+                        <br />
+                        <label>HOW MUCH DO YOU WANT TO INVEST</label><br />
+                        <input class="form-control-sm" id="a" type="" placeholder="Investment Amount" /><br /><br />
+
+                        <label>INTEREST RATE in %age</label><br />
+                        <input class="form-control-sm" disabled value="10%" /><br /><br />
+                        <label>DURATION IN YEARS</label><br />
+                        <select id="b">
+                            <option selected>Duration</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select><br /><br />
+                        <button id="temp">CALCULATE</button>
+                        <p>Your Investment Will Yield <span id="axis">0</span> in <span id="iod">0</span> years</p>
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="form-control-sm p-2 float-lg-start">
+                        <h5 class="fw-semibold">LOAN CALCULATOR</h5>
+                        <br />
+                        <label>HOW MUCH DO YOU WANT TO BORROW</label><br />
+                        <input class="form-control-sm" id="atr" type="" placeholder="Loan Amount" /><br /><br />
+                        <label>INTEREST RATE in %age</label><br />
+                        <input class="form-control-sm" id="ctr" type="" placeholder="Interest" /><br /><br />
+                        <label>LOAN DURATION PER YEAR</label><br />
+                        <input class="form-control-sm" id="bdt" type="" placeholder="Duration" />
+                        <br /><br />
+                        <label for="">REPAYMENT METHOD</label><br />
+                        <select id="dtr">
+                            <option value="1" selected>annual</option>
+                            <option value="12">monthly</option>
+                        </select>
+                        <br /><br />
+                        <button onclick=" per()">CALCULATE</button>
+                        <p id="axe"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 b" style="width: 90%;">
+        <div class="row">
+            <div class="col-lg">
+                <div id="xmas">
+                    <h2 class="fw-semibold">COUNTDOWN TO BIRTHDAY</h2>
+                    <h3 id="day"></h3>
+                </div>
+            </div>
+            <div class="col-lg">
+                <div class="container-fluid" id="xmas">
+                    <h2 class="fw-semibold">COUNTDOWN TO NEW YEAR</h2>
+                    <h3 id="days"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="background: rgba(128, 128, 128, 0.233);">
+        <div class="p-2 mx-lg-5 bg-light pb-3">
+            <h2 class="text-danger">
+                <span id="hourss">00</span>
+                <span id="colon">:</span>
+                <span id="minutess">00</span>
+                <span id="colon">:</span>
+                <span id="secondss">00</span>
+            </h2>
+            <button class="btn btn-outline-success" id="startbtns">start</button>
+            <button class="btn btn-outline-success" id="pausebtns" style="display:none">Pause</button>
+            <button class="btn btn-outline-success" id="resetbtns">Reset</button>
+        </div>
+        <div class="row text-start pt-4 pb-lg-5">
+            <div class="col-lg">
+                <div class="p-2">
+                    <h3>To Do List</h3>
+                    <div class="navbar container" id="olu">
+                        <div class="d-flex" role="search">
+                            <input class="form-control me-2" id="tola" type="text" placeholder="AddList"
+                                aria-label="Search">
+                            <button class="btn btn-outline-success" onclick="tune()" type="submit">AddList</button>
+                        </div>
+                    </div>
+                    <ol class="" id="subject" style="font-size:20px">
+
+                    </ol>
+                </div>
+            </div>
+            <div class="col-lg">
+                <div class="p-2">
+                    <h3>How Old is Nigeria</h3>
+                    <div class="navbar p-2">
+                        <div class="d-flex">
+                            <input class="form-control me-2" id="aero" type="text" placeholder="How Old is Nigeria">
+                            <button class="btn btn-outline-success" onclick="fino()" type="submit">Guess</button>
+                        </div>
+                    </div>
+                    <h6 class="text-capitalize fs-5 font-monospace text-muted" id="tyu"></h6>
+
+                </div>
+            </div>
+            <div class="col-lg">
+                <div class="p-2">
+                    <h1 class="title fs-4 font-monospace" id="title1">APPLICATION FORM</h1>
+                    <div class="navbar p-2">
+                        <div class="d-flex">
+                            <input class="form-control me-2 add" id="aero" type="text" placeholder="Guess My Number">
+                            <button class="btn btn-outline-success" onclick="fio()" type="submit">Guess</button>
+                        </div>
+                    </div>
+                    <h6 class="text-capitalize fs-5 font-monospace text-danger message"></h6>
+                    <h6 class="text-capitalize font-monospace text-muted merit"></h6>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <audio src=" " controls id="audio"></audio>
+            <input type="file" accept="audio/*" id="file-input">
+        </div>
+    </div>
+
+
+    <input type="search" class="d-flex form-control-lg" />
+
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const audio = document.getElementById('audio');
+
+        fileInput.addEventListener('change', function () {
+            const file = this.files[0];
+            audio.src = URL.createObjectURL(file);
+        });
+
+        // GREETINGS
+        let a = new Date().getHours();
+
+        if (a < 12) {
+            window.alert("Welcome User\nGood Morning")
+        }
+        else if (a == 12) {
+            alert("Welcome User\nGood Day")
+        }
+        else if (a <= 14) {
+            alert("Welcome User\nGood Afternoon")
+        }
+        else if (a <= 21) {
+            alert("Welcome User\nGood Evening")
+        }
+        else {
+            alert("Welcome User\nYou Should Be in Bed")
+        }
+        // GREETINGS END
+
+        // TIME
+        function nowTime() {
+            let hh = new Date().getHours()
+            let mm = new Date().getMinutes()
+            let ss = new Date().getSeconds()
+            let session = 'AM';
+
+            if (hh == 0) {
+                hh = 12;
+            }
+            if (hh > 12) {
+                hh = hh - 12;
+                session = "PM"
+            }
+            hh = (hh < 10) ? "0" + hh : hh;
+            mm = (mm < 10) ? "0" + mm : mm;
+            ss = (ss < 10) ? "0" + ss : ss;
+
+            let time = hh + ":" + mm + ":" + ss + " " + session
+
+            document.getElementById('tim').innerHTML = time;
+            setTimeout(nowTime, 1000)
+
+        }
+        nowTime();
+        // TIME END
+
+        // let a = new Date().getDay()
+        // switch (a) {
+        //     case 0:
+        //         alert("You Should Go To Church")
+        //         break;
+        //     case 5:
+        //         alert("Thank God it' Friday")
+        //         break;
+        //     case 6:
+        //         alert("Go To Party")
+
+        //     default:
+        //         alert("Go To Work")
+        //         break;
+        // }
+
+        // CALCULATOR
+        // SIMPLE CALC
+        function jay() {
+            let num1 = document.getElementById("1").value;
+            let num2 = document.getElementById("2").value
+            let sum = Number(num1) + Number(num2)
+            document.getElementById("ase").innerHTML = " +";
+            document.getElementById("ans").innerHTML = "= " + sum;
+
+        }
+        function jos() {
+            num1 = document.getElementById("1").value;
+            num2 = document.getElementById("2").value;
+            let sum = Number(num1) - Number(num2);
+            document.getElementById("ase").innerHTML = " -";
+            document.getElementById("ans").innerHTML = "= " + sum;
+        }
+        function jah() {
+            num1 = document.getElementById("1").value;
+            num2 = document.getElementById("2").value;
+            let sum = Number(num1) * Number(num2);
+            document.getElementById("ase").innerHTML = " *";
+            document.getElementById("ans").innerHTML = "= " + sum;
+        }
+        function jog() {
+            num1 = document.getElementById("1").value;
+            num2 = document.getElementById("2").value;
+            let sum = Number(num1) / Number(num2);
+            document.getElementById("ase").innerHTML = " /";
+            document.getElementById("ans").innerHTML = "= " + sum;
+        }
+        // SIMPLE CALC END
+
+        // INV CALC
+        document.getElementById("temp").addEventListener("click", cas)
+        function cas() {
+
+
+            let a = Number(document.getElementById("a").value);
+            let b = document.getElementById("b").value;
+
+            let interest = a / 10;
+            let years = interest * b;
+            let total = a + years;
+            document.getElementById("axis").innerHTML =
+                total;
+            document.getElementById("iod").innerHTML =
+                b;
+        }
+        // INV CALC END
+
+        // LOAN CALC 
+        function per() {
+            let a = Number(document.getElementById("atr").value);
+            let b = Number(document.getElementById("bdt").value);
+            let c = Number(document.getElementById("ctr").value);
+            let d = Number(document.getElementById("dtr").value);
+
+            if (d == 12) {
+                let d = Number(document.getElementById("dtr").value);
+                let interest = a / c;
+                let years = interest * b;
+                let total = a + years;
+                let u = b * 12
+                let e = total / 12
+                let f = Math.round(e)
+                let z = f / b
+                document.getElementById("axe").innerHTML = "You will be paying" + " " + '#' + z + " " + "monthly for" + " " + u + " " + "month(s)"
+            }
+            else if (d == 1) {
+                let d = Number(document.getElementById("dtr").value);
+                let interest = a / c;
+                let years = interest * b;
+                let total = a + years;
+                let r = total / b
+                let h = Math.round(r)
+                document.getElementById("axe").innerHTML = "You will be paying" + " " + '#' + h + " " + "yearly for" + " " + b + " " + "year(s)";
+            }
+            else {
+                "Invalid Input"
+            }
+        }
+        // LOAN CALC END 
+        // CALCULATOR END 
+
+
+        // COUNTDOWN START
+        function countDown() {
+            let targetTime = new Date("Jan, 1 2024 00:00:00").getTime();
+
+            let currentTime = new Date().getTime();
+
+            let distance = targetTime - currentTime;
+
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            let seconds = Math.floor((distance % (1000 * 60)) / (1000));
+
+            if (distance < 0) {
+                clearInterval(r);
+                document.getElementById('xmas').style.display = "none"
+
+            }
+            document.getElementById('days').innerHTML = days + "days" + " " + hours + "hours" + " " + minutes + "minutes" + " " + seconds + "seconds"
+        }
+
+        let r = setInterval(countDown, 1000)
+
+        function count() {
+            let targetTime = new Date("Jan, 31 2023 00:00:00").getTime();
+
+            let currentTime = new Date().getTime();
+
+            let distance = targetTime - currentTime;
+
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            let seconds = Math.floor((distance % (1000 * 60)) / (1000));
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById('xmas').style.display = "none"
+            }
+            document.getElementById('day').innerHTML = days + "days" + " " + hours + "hours" + " " + minutes + "minutes" + " " + seconds + "seconds"
+        }
+
+        let x = setInterval(count, 1000)
+
+        // COUNTDOWN END
+
+        // TO DO LIST
+        let tune = function () {
+            let a = document.getElementById('olu');
+            let b = document.getElementById('tola').value;
+            let c = document.getElementById('subject');
+
+            let d = document.createElement('li');
+            d.style.width = '100%'
+            d.style.cursor = 'pointer'
+            let e = document.createTextNode(b);
+            d.appendChild(e);
+            c.appendChild(d);
+            document.getElementById('tola').value = '';
+
+
+            let x = document.createElement('span');
+            let y = document.createTextNode('\u00d7');
+            x.appendChild(y);
+            x.style.border = "1px outset red";
+            x.style.color = "red";
+            x.style.padding = "3px";
+            x.style.paddingTop = "0px";
+            x.style.marginLeft = '1pc'
+            x.style.cursor = "pointer";
+            x.className = 'close';
+
+            d.appendChild(x);
+
+            let f = document.getElementsByClassName('close');
+            let i;
+            for (i = 0; i < f.length; i++) {
+                f[i].onclick = function () {
+                    this.parentNode.style.display = "none"
+                }
+
+            }
+        }
+
+
+
+        document.addEventListener('click', function (e) {
+            if (e.key === "Enter") {
+                tunji();
+            };
+        });
+        // TO DO LIST END
+
+        // GUESS NIGERIA AGE
+        function fino() {
+            let b = Number(document.getElementById('aero').value)
+            switch (b) {
+                case 59:
+                    document.getElementById("tyu").innerHTML = "almost correct"
+                    document.getElementById("tyu").className = 'bast'
+                    break;
+                case 61:
+                    document.getElementById("tyu").innerHTML = 'you are close'
+                    document.getElementById("tyu").className = 'bast'
+                    break;
+                case 63:
+                    document.getElementById("tyu").innerHTML = 'correct'
+                    document.getElementById("tyu").className = 'bash'
+                    break;
+
+                default:
+                    document.getElementById("tyu").innerHTML = 'you are wrong'
+                    document.getElementById("tyu").className = 'bast'
+                    break;
+            }
+        }
+        // GUESS NIGERIA AGE END
+
+        // GUESS MY NUMBER GAME 
+        document.querySelector('.title').textContent = 'GUESS MY NUMBER btw 1 and 20'
+
+        let tr = Number(document.querySelector('.add').value);
+
+        const answer = Math.trunc((Math.random() * 20) + 1);
+        console.log(answer);
+
+        let fio = () => {
+            let tr = Number(document.querySelector('.add').value);
+
+            if (tr > 20) {
+                document.querySelector('.message').textContent = `the number is more than 20`;
+            }
+            else if (tr < answer) {
+                document.querySelector('.message').textContent = `too small`;
+            }
+            else if (tr > answer) {
+                document.querySelector('.message').textContent = `too high`;
+            }
+            else if (tr == answer) {
+                document.querySelector('.message').textContent = `correct`;
+                document.querySelector('.message').className = `messy`;
+                document.querySelector('.merit').textContent = `Refresh To Try Again`;
+            }
+            else {
+                document.querySelector('.message').textContent = `wrong prediction`;
+            }
+
+        };
+        function setCounter() {
+            if (condition) {
+                
+            } else {
+                
+            }
+        }
+        // GUESS MY NUMBER GAME END
+
+
+        let ee = 0;
+        let zz = document.getElementById("hourss");
+        let bb = document.getElementById("secondss");
+        let cc = document.getElementById("minutess");
+        let gg = document.getElementById('startbtns');
+        let hh = document.getElementById('pausebtns');
+        let ii = document.getElementById('resetbtns');
+
+
+        function setTime() {
+            ++ee;
+            let d = olu(ee % 60);
+            bb.innerHTML = d;
+
+            let r = olu(parseInt(ee / 60))
+            cc.innerHTML = r;
+            if (r = 60) {
+                clearInterval(r)
+            }
+
+            let io = olu(parseInt(ee / 3600))
+            zz.innerHTML = io;
+            // console.log(i)
+
+
+            if (io == 2) {
+                clearInterval(k);
+            }
+
+        }
+
+        let start = function () {
+            k = setInterval(setTime, 1000);
+        }
+
+        let pause = function () {
+            clearInterval(k);
+        }
+
+        let reset = function () {
+            clearInterval(k);
+            ee = 0;
+            bb.innerHTML = "00";
+            cc.innerHTML = "00";
+
+
+        }
+
+        gg.addEventListener('click', start);
+        hh.addEventListener('click', pause);
+        ii.addEventListener('click', reset);
+
+
+        function olu(x) {
+            let kola = x + "";
+            if (kola.length < 2) {
+                return "0" + kola;
+            }
+            else {
+                return kola;
+            }
+        }
+
+        gg.onclick = function () {
+            hh.style.display = 'inline';
+            gg.style.display = 'none';
+        }
+
+        hh.onclick = function () {
+            gg.style.display = 'inline';
+            hh.style.display = 'none';
+        }
+
+        ii.onclick = function () {
+            gg.style.display = 'inline';
+            hh.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
